@@ -1,0 +1,15 @@
+SET !DATASOURCE "C:\\Users\\ryan.horton\\Documents\\Important Work Docs\\Bug Reports\\Bug Cleanup Group F\\group f deployed macro file.csv"
+
+SET !LOOP 2
+
+SET !DATASOURCE_LINE {{!LOOP}}
+
+URL GOTO=https://na31.salesforce.com/{{!COL2}}
+
+TAG POS=1 TYPE=INPUT:BUTTON ATTR=NAME:newComment
+
+TAG POS=1 TYPE=TEXTAREA FORM=ID:editPage ATTR=ID:CommentBody CONTENT=Hello,<BR><BR>The<SP>bug<SP>that<SP>is<SP>attached<SP>to<SP>this<SP>case,<BR><BR><SP>{{!COL3}}:<SP>{{!COL6}}<BR><BR>Was<SP>resolved<SP>in<SP>the<SP>{{!COL7}}<SP>release.<SP>If<SP>you<SP>have<SP>any<SP>questions<SP>or<SP>concerns,<SP>please<SP>update<SP>this<SP>case.<BR><BR>Sincerely,<BR>Blackbaud<SP>Support<BR><BR>
+
+TAG POS=1 TYPE=INPUT:CHECKBOX FORM=ID:editPage ATTR=ID:IsPublished CONTENT=YES
+
+TAG POS=2 TYPE=INPUT:SUBMIT FORM=ID:editPage ATTR=NAME:save
