@@ -1,0 +1,15 @@
+SET !DATASOURCE "C:\\Users\\ryan.horton\\Documents\\Important Work Docs\\Bug Reports\\Bug Cleanup Group F\\group f wont fix macro file.csv"
+
+SET !LOOP 2
+
+SET !DATASOURCE_LINE {{!LOOP}}
+
+URL GOTO=https://na31.salesforce.com/{{!COL2}}
+
+TAG POS=1 TYPE=INPUT:BUTTON ATTR=NAME:newComment
+
+TAG POS=1 TYPE=TEXTAREA FORM=ID:editPage ATTR=ID:CommentBody CONTENT=Hello,<BR><BR>At<SP>this<SP>time,<SP>the<SP>defect<SP>attached<SP>to<SP>this<SP>case<SP>is<SP>not<SP>targeted<SP>for<SP>a<SP>Luminate<SP>release.<SP>Product<SP>management<SP>works<SP>diligently<SP>to<SP>prioritize<SP>work<SP>on<SP>reported<SP>defects<SP>and<SP>known<SP>issues,<SP>as<SP>well<SP>as<SP>new<SP>features,<SP>compliance<SP>and<SP>performance<SP>improvements.<SP>Prioritizations<SP>for<SP>defects<SP>take<SP>into<SP>account<SP>overall<SP>impact,<SP>alternative<SP>available<SP>workflows,<SP>and<SP>trade-offs<SP>between<SP>new<SP>features<SP>and<SP>low<SP>impact<SP>defects.<SP>Many<SP>times,<SP>the<SP>defect<SP>no<SP>longer<SP>occurs<SP>or<SP>is<SP>unable<SP>to<SP>be<SP>reproduced<SP>because<SP>of<SP>changes<SP>in<SP>environment<SP>or<SP>related<SP>product<SP>improvements<SP>that<SP>have<SP>resolved<SP>the<SP>issues<SP>over<SP>time.<SP><SP>Ultimately,<SP>our<SP>goal<SP>is<SP>to<SP>produce<SP>the<SP>highest<SP>quality<SP>and<SP>most<SP>valuable<SP>product<SP>for<SP>our<SP>users<SP>to<SP>help<SP>drive<SP>engagement<SP>and<SP>revenue.<BR><BR>Thank<SP>you,<BR>Luminate<SP>Products<SP>and<SP>Support
+
+TAG POS=1 TYPE=INPUT:CHECKBOX FORM=ID:editPage ATTR=ID:IsPublished CONTENT=YES
+
+TAG POS=2 TYPE=INPUT:SUBMIT FORM=ID:editPage ATTR=NAME:save
