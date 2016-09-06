@@ -1,0 +1,15 @@
+SET !DATASOURCE "C:\\Users\\ryan.horton\\Documents\\Important Work Docs\\Bug Reports\\Bug Cleanup Group F\\group f invalid worksforme macro file.csv"
+
+SET !LOOP 2
+
+SET !DATASOURCE_LINE {{!LOOP}}
+
+URL GOTO=https://na31.salesforce.com/{{!COL2}}
+
+TAG POS=1 TYPE=INPUT:BUTTON ATTR=NAME:newComment
+
+TAG POS=1 TYPE=TEXTAREA FORM=ID:editPage ATTR=ID:CommentBody CONTENT=Hello,<BR><BR>The<SP>bug<SP>attached<SP>to<SP>this<SP>case<SP>has<SP>been<SP>unreproducible<SP>by<SP>Blackbaud<SP>engineering<SP>on<SP>the<SP>current<SP>version<SP>of<SP>Luminate<SP>Online.<SP><SP>We<SP>will<SP>be<SP>closing<SP>this<SP>case,<SP>but<SP>if<SP>you<SP>continue<SP>to<SP>experience<SP>this<SP>same<SP>issue<SP>with<SP>the<SP>current<SP>version<SP>of<SP>Luminate<SP>Online,<SP>please<SP>update<SP>this<SP>case<SP>with<SP>steps<SP>to<SP>follow<SP>so<SP>we<SP>can<SP>investigate<SP>the<SP>issue<SP>further.<BR><BR>Sincerely,<SP>Blackbaud<SP>Support
+
+TAG POS=1 TYPE=INPUT:CHECKBOX FORM=ID:editPage ATTR=ID:IsPublished CONTENT=YES
+
+TAG POS=2 TYPE=INPUT:SUBMIT FORM=ID:editPage ATTR=NAME:save
